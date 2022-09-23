@@ -1,8 +1,4 @@
-<!--
-    Replace this with your working code from Lab 2, and include:
-    - The styles in this folder's `style.css`
-    - The script in script.js, which should be included via a `<script src="script.js" >` call before your closing </body> tag 
--->
+
 <html lang="en">
 
 <head>
@@ -36,12 +32,16 @@
             <div class="right_section box">
                 <!-- right side  -->
                 <h2>Image Carousel</h2>
-                <div class="grid">
-                    <!-- images box-->
-                    <img src="images/mochi.gif" alt="A GIF Image of a Mochi Ball">
-                    <img src="images/mochi.jpg" alt="A JPG Image of a Mochi Ball">
-                    <img src="images/mochi.png" alt="A PNG Image of a Mochi Ball">
-                    <img src="images/mochi.svg" alt="An SVG Image of a Mochi Ball">
+                <div class="carousel">
+                    <button class="prev">prev</button>
+                    <div class="slides">
+                        <!-- images box-->
+                        <div class="carousel_item visible"><img id = "slide_1" src="images/car.JPG" alt="An image of a car"></div>
+                        <div class="carousel_item hidden"><img id = "slide_2" src="images/album.jpeg" alt="An image of an album"></div>
+                        <div class="carousel_item hidden"><img id = "slide_3" src="images/team.JPG" alt="An image of a soccer team"></div>
+                        <div class="carousel_item hidden"><img id = "slide_4" src="images/shoe.JPG" alt="An image of a shoe"></div>
+                    </div>
+                    <button class="next">next</button>
                 </div>
                 <div class="box">
                     <!-- description box -->
@@ -60,6 +60,7 @@
                 Github Org</a>
         </p>
     </div>
+    <script id = "slide_1" src="script.js"></script>
 </body>
 
 </html>
