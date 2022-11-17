@@ -14,8 +14,11 @@ export async function loadFoodServiceData(req, res, next) {
     const url = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'; // remote URL! you can test it in your browser
     const data = await fetch(url); // We're using a library that mimics a browser 'fetch' for simplicity
     const json = await data.json(); // the data isn't json until we access it using dot notation
+
+    const reply = json.filter((item) => Boolean(item.geocoded_column_1)).filter((item) => Boolean(item.name));
+
     console.log('Results in foodServiceData middleware', json.length); // let's check that something's there before we return it
-    req.foodServiceData = json; // and let's _attach_ the data to our request object here
+    req.foodServiceData = reply; // and let's _attach_ the data to our request object here
     next();
   } catch (err) {
     // and let's handle any errors by closing the request with a message
